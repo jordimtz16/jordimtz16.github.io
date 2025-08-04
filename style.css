@@ -30,8 +30,7 @@ body {
 
 .overlay {
   position: relative;
-  padding-top: 100px;
-  color: blue; 
+  padding-top: 100px; 
 }
 
 main {
