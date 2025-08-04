@@ -31,6 +31,26 @@
     </section>
   </main>
 
+  <section class="tabs">
+  <div class="tab-buttons">
+    <button class="tab-link active" onclick="openTab(event, 'about')">About</button>
+    <button class="tab-link" onclick="openTab(event, 'projects')">Projects</button>
+    <button class="tab-link" onclick="openTab(event, 'contact')">Contact</button>
+  </div>
+
+  <div id="about" class="tab-content active">
+    <p>This is the about tab. Talk about yourself here.</p>
+  </div>
+  
+  <div id="projects" class="tab-content">
+    <p>List some projects or work samples here.</p>
+  </div>
+  
+  <div id="contact" class="tab-content">
+    <p>Put your contact information or a contact form here.</p>
+  </div>
+</section>
+
   <footer>
     <p>© 2025 Your Name</p>
   </footer>
