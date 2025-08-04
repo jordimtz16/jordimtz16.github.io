@@ -76,3 +76,39 @@ footer {
   background: #eee;
   margin-top: 2rem;
 }
+
+
+
+
+.tabs {
+  margin: 2rem;
+}
+
+.tab-buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+
+.tab-link {
+  padding: 10px 20px;
+  cursor: pointer;
+  border: none;
+  background-color: #eee;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.tab-link.active {
+  background-color: #333;
+  color: white;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
