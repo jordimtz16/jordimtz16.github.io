@@ -44,10 +44,23 @@
         <p>I have been the main instructor for two courses at UCSD and one course at the University of Costa Rica. Those courses range from low-division to high-division elective classes in economics.</p>
         <p>I have also been an Instructional Assistant (IA) for 14 quarters, 10 different classes, across three different departments at UCSD. </p>
 
-        <ul>
-          <li>Instructor – Decisions Under Uncertainty (UCSD, 2025)</li>
-          <li>Teaching Assistant – Behavioral Economics (2023–2024)</li>
-        </ul>
+        <!-- Buttons -->
+              <div class="button-container">
+                <button class="dropdown-btn" onclick="toggleDropdown(event, 'instructor-list')">Show Courses as Instructor</button>
+                <button class="dropdown-btn" onclick="toggleDropdown(event, 'ia-list')">Show Courses as IA</button>
+              </div>
+            
+              <!-- Dropdown lists -->
+              <ul id="instructor-list" class="dropdown-list">
+                <li>Decisions Under Uncertainty (UCSD, 2025)</li>
+                <li>Introductory Economics (UCR, 2021)</li>
+              </ul>
+            
+              <ul id="ia-list" class="dropdown-list">
+                <li>Behavioral Economics (UCSD, 2023–2024)</li>
+                <li>Game Theory (UCSD, 2022)</li>
+                <li>Intermediate Microeconomics (UCSD, multiple quarters)</li>
+              </ul>
       </section>
 
       <!-- Teaching Materials -->
