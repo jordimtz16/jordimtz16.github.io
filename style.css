@@ -201,15 +201,25 @@ footer {
 
 /* Dropdown list hidden by default */
 .dropdown-list {
-  display: none;
+  display: none;             /* stays hidden until button click */
   margin-top: 10px;
-  padding: 10px;
+  padding: 10px 20px;        /* extra padding for nicer alignment */
   background: #f9f9f9;
   border: 1px solid #ccc;
   border-radius: 6px;
-  list-style-type: none;
+  list-style-type: none;     /* remove default browser bullets */
 }
 
 .dropdown-list li {
   margin: 5px 0;
+  padding-left: 10px;
+  position: relative;
+}
+
+.dropdown-list li::before {
+  content: "•";              /* custom bullet */
+  color: #0077cc;            /* blue bullet */
+  font-weight: bold;
+  position: absolute;
+  left: -10px;
 }
