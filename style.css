@@ -111,3 +111,66 @@ footer {
   display: block;
 }
 
+
+
+
+
+/* Teaching tab layout */
+.teaching-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+  position: relative;
+}
+
+/* Left half */
+.teaching-left {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+/* Each section */
+.teaching-section {
+  margin-bottom: 40px;
+}
+
+.teaching-section h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #333;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.teaching-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.teaching-section li {
+  margin: 5px 0;
+}
+
+.teaching-section a {
+  color: #0077cc;
+  text-decoration: none;
+}
+
+.teaching-section a:hover {
+  text-decoration: underline;
+}
+
+/* Circle in the center */
+.teaching-circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #f0f0f0, #cccccc);
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  margin-left: 20px;
+}
+
