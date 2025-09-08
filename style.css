@@ -174,3 +174,42 @@ footer {
   margin-left: 20px;
 }
 
+
+
+/* SECTION COURSES BUTTONS! */
+/* Buttons */
+.button-container {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+}
+
+.dropdown-btn {
+  padding: 8px 14px;
+  border: none;
+  background-color: #0077cc;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: background-color 0.2s ease;
+}
+
+.dropdown-btn:hover {
+  background-color: #005fa3;
+}
+
+/* Dropdown list hidden by default */
+.dropdown-list {
+  display: none;
+  margin-top: 10px;
+  padding: 10px;
+  background: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  list-style-type: none;
+}
+
+.dropdown-list li {
+  margin: 5px 0;
+}
