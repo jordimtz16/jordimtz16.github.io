@@ -4,8 +4,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const tabContents = document.querySelectorAll(".tab-content");
 
   tabLinks.forEach(link => {
-    link.addEventListener("click", (evt) => {
-      const tabName = link.getAttribute("onclick").match(/'(.+?)'/)[1];
+    link.addEventListener("click", () => {
+      const tabName = link.getAttribute("data-tab");
 
       // Remove active classes
       tabLinks.forEach(btn => btn.classList.remove("active"));
@@ -19,27 +19,31 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-
-
-// CODE TO SHOW THE DROPDOWN LISTS OF COURSES 
+// CODE TO SHOW THE DROPDOWN LISTS OF COURSES
 
 function toggleDropdown(event, listId) {
   event.stopPropagation(); // prevent immediate close when clicking button
   const list = document.getElementById(listId);
-  const allLists = document.querySelectorAll(".dropdown-list");
+  const btn = event.currentTarget;
+  const isOpen = list.classList.contains("open");
 
   // Close all dropdowns first
-  allLists.forEach(l => {
-    if (l !== list) l.style.display = "none";
-  });
+  document.querySelectorAll(".dropdown-list").forEach(l => l.classList.remove("open"));
+  document.querySelectorAll(".dropdown-btn").forEach(b => b.classList.remove("open"));
 
   // Toggle this dropdown
-  list.style.display = (list.style.display === "block") ? "none" : "block";
+  if (!isOpen) {
+    list.classList.add("open");
+    btn.classList.add("open");
+  }
 }
 
 // Close dropdowns when clicking outside
 document.addEventListener("click", function () {
   document.querySelectorAll(".dropdown-list").forEach(list => {
-    list.style.display = "none";
+    list.classList.remove("open");
+  });
+  document.querySelectorAll(".dropdown-btn").forEach(btn => {
+    btn.classList.remove("open");
   });
 });
