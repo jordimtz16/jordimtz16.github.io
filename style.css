@@ -44,8 +44,7 @@ body {
 .overlay h1 {
   font-family: var(--heading-font);
   letter-spacing: 0.3px;
-  font-size: clamp(1.5rem, 6vw, 2.4rem);
-  padding: 0 16px;
+  font-size: 2.4rem;
 }
 
 main {
@@ -98,10 +97,7 @@ footer {
 }
 
 .tabs {
-  max-width: 1300px;
-  margin: 2rem auto;
-  padding: 0 24px;
-  box-sizing: border-box;
+  margin: 2rem;
 }
 
 .tab-buttons {
@@ -134,15 +130,38 @@ footer {
   display: block;
 }
 
-/* Teaching tab layout — plain two columns */
+/* Teaching tab layout — book-styled frame with two "pages" */
 .teaching-container {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  gap: 20px;
+  gap: 0;
   flex-wrap: wrap;
   min-height: 70vh;
   margin: 20px;
+  position: relative;
+  background: #fdfbf6;
+  border-radius: 8px;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.teaching-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 26px;
+  margin-left: -13px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(0, 0, 0, 0.07) 45%,
+    rgba(0, 0, 0, 0.11) 50%,
+    rgba(0, 0, 0, 0.07) 55%,
+    transparent
+  );
+  pointer-events: none;
 }
 
 .teaching-left,
@@ -150,8 +169,16 @@ footer {
   flex: 1;
   min-width: 280px;
   max-width: 600px;
-  padding: 20px;
+  padding: 30px 34px;
   box-sizing: border-box;
+  position: relative;
+}
+
+.teaching-left {
+  box-shadow: inset -10px 0 14px -12px rgba(0, 0, 0, 0.12);
+}
+.teaching-right {
+  box-shadow: inset 10px 0 14px -12px rgba(0, 0, 0, 0.12);
 }
 
 /* Stat filler for the shorter column */
@@ -357,32 +384,31 @@ footer {
 /* -----------------------
    Responsive adjustments
 ------------------------ */
-@media (max-width: 680px) {
+@media (max-width: 900px) {
   .teaching-container {
     flex-direction: column;
     align-items: center;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.10);
+  }
+
+  .teaching-container::before {
+    display: none;
   }
 
   .teaching-left,
   .teaching-right {
     width: 100%;
     max-width: 100%;
-    padding: 15px;
+    padding: 20px;
+    box-shadow: none;
+  }
+
+  .teaching-right {
+    border-top: 1px dashed rgba(var(--accent-rgb), 0.25);
+    margin-top: 6px;
   }
 
   .highlight-quotes {
     grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero {
-    height: 220px;
-  }
-  .bg-image {
-    height: 220px;
-  }
-  .overlay {
-    padding-top: 65px;
   }
 }
