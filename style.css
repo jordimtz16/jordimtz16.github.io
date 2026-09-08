@@ -130,15 +130,38 @@ footer {
   display: block;
 }
 
-/* Teaching tab layout */
+/* Teaching tab layout — book-styled frame with two "pages" */
 .teaching-container {
   display: flex;
   justify-content: center;
-  align-items: stretch;
-  gap: 20px;
+  align-items: flex-start;
+  gap: 0;
   flex-wrap: wrap;
   min-height: 70vh;
   margin: 20px;
+  position: relative;
+  background: #fdfbf6;
+  border-radius: 8px;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.teaching-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 26px;
+  margin-left: -13px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(0, 0, 0, 0.07) 45%,
+    rgba(0, 0, 0, 0.11) 50%,
+    rgba(0, 0, 0, 0.07) 55%,
+    transparent
+  );
+  pointer-events: none;
 }
 
 .teaching-left,
@@ -146,44 +169,38 @@ footer {
   flex: 1;
   min-width: 280px;
   max-width: 600px;
-  padding: 20px;
+  padding: 30px 34px;
   box-sizing: border-box;
+  position: relative;
 }
 
-/* Center stat circle */
-.circle-wrap {
-  flex-shrink: 0;
-  width: 170px;
-  height: 170px;
-  border-radius: 50%;
-  background: radial-gradient(circle, #ffffff, #eef1f5);
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.12);
-  margin: 20px auto;
+.teaching-left {
+  box-shadow: inset -10px 0 14px -12px rgba(0, 0, 0, 0.12);
+}
+.teaching-right {
+  box-shadow: inset 10px 0 14px -12px rgba(0, 0, 0, 0.12);
+}
+
+/* Stat filler for the shorter column */
+.stat-filler {
+  margin-top: 30px;
+  padding-top: 16px;
+  border-top: 1px dashed rgba(var(--accent-rgb), 0.3);
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  align-self: center;
+  align-items: baseline;
+  gap: 10px;
 }
-
-.circle-wrap .stat-number {
-  display: block;
-  font-size: 2.4rem;
-  font-weight: bold;
+.stat-filler .stat-number {
   font-family: var(--heading-font);
+  font-size: 1.9rem;
+  font-weight: bold;
   color: var(--accent);
-  line-height: 1;
 }
-
-.circle-wrap .stat-label {
-  display: block;
+.stat-filler .stat-label {
   font-size: 0.75rem;
-  color: #555;
-  margin-top: 6px;
-  padding: 0 12px;
+  color: #666;
   text-transform: uppercase;
-  letter-spacing: 0.6px;
+  letter-spacing: 0.5px;
 }
 
 /* Section headings */
@@ -334,31 +351,32 @@ footer {
 /* Student quote grid */
 .highlight-quotes {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
+  grid-template-columns: 1fr;
+  gap: 10px;
   margin: 12px 0 22px 0;
 }
 .highlight-quote {
   background: rgba(var(--accent-rgb), 0.06);
-  border-radius: 10px;
-  padding: 16px 18px;
+  border-radius: 8px;
+  padding: 10px 14px;
 }
 .highlight-quote .quote-tag {
   display: inline-block;
   font-style: normal;
   font-weight: 700;
-  font-size: 0.72rem;
+  font-size: 0.66rem;
   letter-spacing: 0.5px;
   text-transform: uppercase;
   color: var(--accent-dark);
   background: rgba(var(--accent-rgb), 0.12);
-  padding: 3px 9px;
+  padding: 2px 7px;
   border-radius: 5px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 .highlight-quote p {
   font-style: italic;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
+  line-height: 1.45;
   color: #333;
   margin: 0;
 }
@@ -372,17 +390,16 @@ footer {
     align-items: center;
   }
 
+  .teaching-container::before {
+    display: none;
+  }
+
   .teaching-left,
   .teaching-right {
     width: 100%;
     max-width: 100%;
-    padding: 15px;
-  }
-
-  .circle-wrap {
-    width: 150px;
-    height: 150px;
-    margin: 20px 0;
+    padding: 20px;
+    box-shadow: none;
   }
 
   .highlight-quotes {
