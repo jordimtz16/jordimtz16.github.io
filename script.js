@@ -1,49 +1,219 @@
-// script.js
-document.addEventListener("DOMContentLoaded", () => {
-  const tabLinks = document.querySelectorAll(".tab-link");
-  const tabContents = document.querySelectorAll(".tab-content");
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jordi Martinez-Munoz</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
 
-  tabLinks.forEach(link => {
-    link.addEventListener("click", () => {
-      const tabName = link.getAttribute("data-tab");
+  <section class="tabs">
+  <div class="tab-buttons">
+    <button class="tab-link active" data-tab="about">About</button>
+    <button class="tab-link" data-tab="projects">Research</button>
+    <button class="tab-link" data-tab="teaching">Teaching</button>
+  </div>
 
-      // Remove active classes
-      tabLinks.forEach(btn => btn.classList.remove("active"));
-      tabContents.forEach(content => content.classList.remove("active"));
+  <div id="about" class="tab-content active">
+     <header class="hero">
+    <img src="backround.jpg" alt="Background" class="bg-image">
+    <div class="overlay">
+      <h1>Jordi Martinez-Munoz</h1>
+    </div>
+  </header>
+     <section class="about">
+      <!--<img src="profile.JPG" alt="Profile" class="profile-pic"> -->
+      <p>Hello! I'm a PhD candidate in economics at UCSD.</p>
+      <br>
+       <br>
+       <br>
+         <section class="links">
+      <h2>Find Me Online</h2>
+      <ul>
+        <li><a href="https://github.com/jordimtz16">GitHub</a></li>
+        <li><a href="https://linkedin.com/in/jordi-martinez-muñoz-696444108/">LinkedIn</a></li>
+        <li><a href="mailto:jom001@ucsd.edu">Email Me</a></li>
+      </ul>
+    </section>
+    </section>
+  </div>
 
-      // Add active to current
-      document.getElementById(tabName).classList.add("active");
-      link.classList.add("active");
-    });
-  });
-});
+  <div id="projects" class="tab-content">
+    <p>Coming...</p>
+  </div>
+
+<div id="teaching" class="tab-content">
+  <div class="teaching-container">
+    <!-- Left half -->
+    <div class="teaching-left">
+      <!-- Teaching Experience -->
+      <section class="teaching-section">
+        <h2>Experience</h2>
+        <p>I have been the main instructor for two courses at UCSD and one course at the University of Costa Rica. Those courses range from low-division to high-division elective classes in economics.</p>
+        <p>I have also been an Instructional Assistant (IA) for 15 quarters, 10 different classes, across three different departments at UCSD. </p>
+
+        <!-- Buttons -->
+              <div class="button-container">
+                <button class="dropdown-btn" onclick="toggleDropdown(event, 'instructor-list')">Courses as Instructor <span class="chevron">▾</span></button>
+                <button class="dropdown-btn" onclick="toggleDropdown(event, 'ia-list')">Courses as IA at UCSD <span class="chevron">▾</span></button>
+              </div>
+
+              <!-- Dropdown lists -->
+              <ul id="instructor-list" class="dropdown-list">
+                <li><span class="course-code">XE-0156</span><span class="course-detail">Introductory to Economics for Non-Economists (University of Costa Rica, I 2016, II 2016, Summer 2016, I 2017)</span></li>
+                <li><span class="course-code">Econ 100B</span><span class="course-detail">Intermediate Microeconomics B -upper division, core class. (UCSD, summer I, 2024)</span></li>
+                <li><span class="course-code">Econ 171</span><span class="course-detail">Decisions Under Uncertainty -upper division, elective (UCSD, summer II 2025)</span></li>
+              </ul>
+
+              <ul id="ia-list" class="dropdown-list">
+                <li><span class="course-code">Econ 100A</span><span class="course-detail">Intermediate Microeconomics A (winter, 2025)</span></li>
+                <li><span class="course-code">Econ 100B</span><span class="course-detail">Intermediate Microeconomics A (winter and spring, 2022)</span></li>
+                <li><span class="course-code">Econ 142</span><span class="course-detail">Behavioral Economics (spring, 2025)</span></li>
+                <li><span class="course-code">Econ 144</span><span class="course-detail">Economics of Conservation (summer II, 2024)</span></li>
+                <li><span class="course-code">Econ 120B</span><span class="course-detail">Intermediate Econometrics B (summer II, 2022)</span></li>
+                <li><span class="course-code">Econ 120C</span><span class="course-detail">Intermediate Econometrics C (summer I, 2022)</span></li>
+                <li><span class="course-code">GPCO 401</span><span class="course-detail">Microeconomics for Policy/Mgmt (School of Global Policy and Strategy, graduate program) (fall 2021, 2022, 2023, 2024, 2025)</span></li>
+                <li><span class="course-code">MGT 160</span><span class="course-detail">Experiments in Firms (Rady School of Management) (winter 2023)</span></li>
+                <li><span class="course-code">MGT 444</span><span class="course-detail">Topics in Business Strategy: Experiments in Firms (Rady School of Management, graduate program) (spring 2023)</span></li>
+                <li><span class="course-code">MGT 410</span><span class="course-detail">Strategy (Rady School of Management, graduate program) (summer 2023)</span></li>
+              </ul>
+      </section>
+
+          <!-- Teaching Training -->
+<section class="teaching-section">
+<h2>Training</h2>
+  <ul>
+    <li><a href="teaching_materials/certificate2.pdf" target="_blank">Student-Centered College Teaching and Course Design</a></li>
+    <li><a href="teaching_materials/certificate1.pdf" target="_blank">Engaged Teaching Scholar in Student-Centered College Teaching</a></li>
+  </ul>
 
 
-// CODE TO SHOW THE DROPDOWN LISTS OF COURSES
+</section> 
 
-function toggleDropdown(event, listId) {
-  event.stopPropagation(); // prevent immediate close when clicking button
-  const list = document.getElementById(listId);
-  const btn = event.currentTarget;
-  const isOpen = list.classList.contains("open");
+      
+      <!-- Teaching Materials -->
+<section class="teaching-section">
+  <h2>Sample Materials</h2>
 
-  // Close all dropdowns first
-  document.querySelectorAll(".dropdown-list").forEach(l => l.classList.remove("open"));
-  document.querySelectorAll(".dropdown-btn").forEach(b => b.classList.remove("open"));
+  <!-- Econ 171 -->
+  <div class="course-material">
+    <h3>Econ 171</h3>
+    <ul>
+      <li><a href="teaching_materials/Econ171_syllabus.pdf" target="_blank">Syllabus</a></li>
+      <li><a href="teaching_materials/Econ_171_notes_full.pdf" target="_blank">Lecture Notes and Problem Sets</a></li>
+       <li><a href="teaching_materials/Econ171_slides_full.pdf" target="_blank">Lecture Slides</a></li>
+    </ul>
+  </div>
 
-  // Toggle this dropdown
-  if (!isOpen) {
-    list.classList.add("open");
-    btn.classList.add("open");
-  }
-}
+  <!-- Econ 100B -->
+  <div class="course-material">
+    <h3>Econ 100B</h3>
+    <ul>
+      <li><a href="teaching_materials/Econ100b_syllabus.pdf" target="_blank">Syllabus</a></li>
+      <li><a href="teaching_materials/Econ100B_notes_full.pdf" target="_blank">Lecture Notes and Problem Sets</a></li>
+    </ul>
+  </div>
 
-// Close dropdowns when clicking outside
-document.addEventListener("click", function () {
-  document.querySelectorAll(".dropdown-list").forEach(list => {
-    list.classList.remove("open");
-  });
-  document.querySelectorAll(".dropdown-btn").forEach(btn => {
-    btn.classList.remove("open");
-  });
-});
+  <!-- XE-156 -->
+  <div class="course-material">
+    <h3>XE-156</h3>
+    <ul>
+      <li><a href="https://trello.com/b/RXXgXZx8/xe-0156-i-2017">Trello Board (Spanish)</a></li>
+    </ul>
+  </div>
+
+</section>
+
+<div class="stat-filler">
+  <span class="stat-number">15</span>
+  <span class="stat-label">quarters teaching<br>3 departments</span>
+</div>
+    </div>
+
+    <!-- Right half -->
+    <div class="teaching-right">
+      <section class="teaching-section">
+        <h2>Assessment of My Teaching</h2>
+
+        <!-- What I Think -->
+        <div class="assessment-subsection">
+          <h3>What I Think</h3>
+          <p>I reflect on my teaching practices in my <a href="teaching_materials/Teaching_statement.pdf" target="_blank">Teaching Statement</a>.</p>
+        </div>
+
+        <!-- What My Students Think -->
+        <div class="assessment-subsection">
+          <h3>What My Students Think</h3>
+
+          <div class="highlight-quotes">
+            <div class="highlight-quote">
+              <span class="quote-tag">Econ 100B, 2024 — Instructor</span>
+              <p>"I actually really enjoyed this course more than I thought I would. The teacher made the learning
+environment very welcoming. He never just spoke at you for 2.5 hours. He engaged with you by
+asking questions, telling jokes, relating the material to practical scenarios, etc. If professor
+Munoz was to teach Econ 100C or some other Econ course, I would definitely consider taking it
+in the Fall."</p>
+            </div>
+            <div class="highlight-quote">
+              <span class="quote-tag">Econ 100A, 2025</span>
+              <p>"The best TA I have ever had. He is amazing, went above and beyond, and made sure that every
+student understood the course material and how to approach every single problem. I did so well
+on the first midterm largely because of him. The difference in scores (projection) of the two
+midterms is the difference in the TA sections. This guy deserves all the money in the world to
+just keep teaching and working with students. I do not give praise lightly, and I was beyond
+blown away by this amazing TA. It was an honor to be in his class."</p>
+            </div>
+            <div class="highlight-quote">
+              <span class="quote-tag">GPCO 401, 2023</span>
+              <p>"Jordi was an amazing TA!! I went to almost all of his TA sessions and office hours because his
+explanations of the economic concepts behind the math were the only thing that made sense to me,
+and most likely one of the only reasons I passed the latter half of this class. He is genuinely excited
+about economics, and this translated to his ability to make economics fun. I always looked forward to
+his TA sessions and office hours because I knew he would not only have answers to my questions, but
+a detailed explanation of why that was the answer. His depth of knowledge is truly impressive and
+contributed to him being one of the best TAs I've ever had."</p>
+            </div>
+            <div class="highlight-quote">
+              <span class="quote-tag">GPCO 401, 2024</span>
+              <p>"This TA did an amazing job in leading lessons with thoughtful examples and colorful descriptions
+of the lessons covered in class. I really feel like I learned some of the concepts covered in class
+in this TA's TA sessions. The TA works with the students so that everyone fully understands the
+topic at hand."</p>
+            </div>
+            <div class="highlight-quote">
+              <span class="quote-tag">Econ 100A, 2025</span>
+              <p>"My friend who was not enrolled in the course would attend their discussion sections with me
+because she really enjoyed their teaching style."</p>
+            </div>
+            <div class="highlight-quote">
+              <span class="quote-tag">Econ 120C, Summer 2022</span>
+              <p>"This is my second or third time with Jordi, he is a great TA always very helpful and absolutely
+great instructor. He is highly knowledgeable and understanding."</p>
+            </div>
+          </div>
+
+          <p>
+            You can read more in the full 
+            <a href="teaching_materials/evals_full.pdf" target="_blank">teaching evaluations</a> (in chronological order, from earliest to oldest).
+          </p>
+        </div>
+      </section>
+    </div>
+
+    
+  </div>
+</div>
+  
+</section>
+
+  <footer>
+    <p>© 2025 Jordi Martinez Muñoz</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
