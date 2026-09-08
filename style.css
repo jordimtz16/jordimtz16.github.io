@@ -56,22 +56,7 @@ main {
 
 .about {
   text-align: center;
-  margin: 20px auto 2rem auto;
-  max-width: 700px;
-  background: #fdfbf6;
-  border-radius: 8px;
-  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.06);
-  padding: 40px 34px;
-}
-
-.page-card {
-  background: #fdfbf6;
-  border-radius: 8px;
-  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.06);
-  padding: 40px 34px;
-  margin: 20px auto;
-  max-width: 700px;
-  min-height: 30vh;
+  margin-bottom: 2rem;
 }
 
 .profile-pic {
@@ -113,9 +98,10 @@ footer {
 }
 
 .tabs {
-  max-width: 1100px;
+  max-width: 1300px;
   margin: 2rem auto;
   padding: 0 24px;
+  box-sizing: border-box;
 }
 
 .tab-buttons {
@@ -148,38 +134,15 @@ footer {
   display: block;
 }
 
-/* Teaching tab layout — book-styled frame with two "pages" */
+/* Teaching tab layout — plain two columns */
 .teaching-container {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  gap: 0;
+  gap: 20px;
   flex-wrap: wrap;
   min-height: 70vh;
   margin: 20px;
-  position: relative;
-  background: #fdfbf6;
-  border-radius: 8px;
-  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.06);
-}
-
-.teaching-container::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  width: 26px;
-  margin-left: -13px;
-  background: linear-gradient(
-    to right,
-    transparent,
-    rgba(0, 0, 0, 0.07) 45%,
-    rgba(0, 0, 0, 0.11) 50%,
-    rgba(0, 0, 0, 0.07) 55%,
-    transparent
-  );
-  pointer-events: none;
 }
 
 .teaching-left,
@@ -187,16 +150,8 @@ footer {
   flex: 1;
   min-width: 280px;
   max-width: 600px;
-  padding: 30px 34px;
+  padding: 20px;
   box-sizing: border-box;
-  position: relative;
-}
-
-.teaching-left {
-  box-shadow: inset -10px 0 14px -12px rgba(0, 0, 0, 0.12);
-}
-.teaching-right {
-  box-shadow: inset 10px 0 14px -12px rgba(0, 0, 0, 0.12);
 }
 
 /* Stat filler for the shorter column */
@@ -406,24 +361,13 @@ footer {
   .teaching-container {
     flex-direction: column;
     align-items: center;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.10);
-  }
-
-  .teaching-container::before {
-    display: none;
   }
 
   .teaching-left,
   .teaching-right {
     width: 100%;
     max-width: 100%;
-    padding: 20px;
-    box-shadow: none;
-  }
-
-  .teaching-right {
-    border-top: 1px dashed rgba(var(--accent-rgb), 0.25);
-    margin-top: 6px;
+    padding: 15px;
   }
 
   .highlight-quotes {
@@ -440,9 +384,5 @@ footer {
   }
   .overlay {
     padding-top: 65px;
-  }
-  .about,
-  .page-card {
-    padding: 26px 20px;
   }
 }
