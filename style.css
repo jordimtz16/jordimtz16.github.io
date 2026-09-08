@@ -44,7 +44,8 @@ body {
 .overlay h1 {
   font-family: var(--heading-font);
   letter-spacing: 0.3px;
-  font-size: 2.4rem;
+  font-size: clamp(1.5rem, 6vw, 2.4rem);
+  padding: 0 16px;
 }
 
 main {
@@ -55,7 +56,22 @@ main {
 
 .about {
   text-align: center;
-  margin-bottom: 2rem;
+  margin: 20px auto 2rem auto;
+  max-width: 700px;
+  background: #fdfbf6;
+  border-radius: 8px;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.06);
+  padding: 40px 34px;
+}
+
+.page-card {
+  background: #fdfbf6;
+  border-radius: 8px;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.06);
+  padding: 40px 34px;
+  margin: 20px auto;
+  max-width: 700px;
+  min-height: 30vh;
 }
 
 .profile-pic {
@@ -97,7 +113,9 @@ footer {
 }
 
 .tabs {
-  margin: 2rem;
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 0 24px;
 }
 
 .tab-buttons {
@@ -384,10 +402,11 @@ footer {
 /* -----------------------
    Responsive adjustments
 ------------------------ */
-@media (max-width: 900px) {
+@media (max-width: 680px) {
   .teaching-container {
     flex-direction: column;
     align-items: center;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.10);
   }
 
   .teaching-container::before {
@@ -402,7 +421,28 @@ footer {
     box-shadow: none;
   }
 
+  .teaching-right {
+    border-top: 1px dashed rgba(var(--accent-rgb), 0.25);
+    margin-top: 6px;
+  }
+
   .highlight-quotes {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    height: 220px;
+  }
+  .bg-image {
+    height: 220px;
+  }
+  .overlay {
+    padding-top: 65px;
+  }
+  .about,
+  .page-card {
+    padding: 26px 20px;
   }
 }
