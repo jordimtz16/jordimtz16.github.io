@@ -181,26 +181,62 @@ footer {
   box-shadow: inset 10px 0 14px -12px rgba(0, 0, 0, 0.12);
 }
 
-/* Stat filler for the shorter column */
+/* Evaluation stats for the shorter column */
 .stat-filler {
   margin-top: 30px;
   padding-top: 16px;
   border-top: 1px dashed rgba(var(--accent-rgb), 0.3);
-  display: flex;
-  align-items: baseline;
-  gap: 10px;
 }
-.stat-filler .stat-number {
+.eval-heading {
   font-family: var(--heading-font);
-  font-size: 1.9rem;
-  font-weight: bold;
-  color: var(--accent);
+  color: var(--accent-dark);
+  font-size: 0.85rem;
+  margin-bottom: 8px;
 }
-.stat-filler .stat-label {
-  font-size: 0.75rem;
+.eval-heading:not(:first-child) {
+  margin-top: 18px;
+}
+.eval-rate {
+  font-family: var(--body-font);
+  font-weight: 400;
+  font-size: 0.72rem;
   color: #666;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+}
+.eval-table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  font-size: 0.66rem;
+  margin-bottom: 8px;
+}
+.eval-table th,
+.eval-table td {
+  padding: 4px 5px;
+  text-align: left;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  vertical-align: top;
+  line-height: 1.3;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+.eval-table th {
+  color: var(--accent-dark);
+  font-weight: 700;
+  background: rgba(var(--accent-rgb), 0.06);
+}
+.eval-note {
+  font-size: 0.6rem;
+  color: #777;
+  font-style: italic;
+  line-height: 1.35;
+}
+.eval-list {
+  list-style: none;
+  font-size: 0.7rem;
+  line-height: 1.55;
+}
+.eval-list strong {
+  color: var(--accent);
 }
 
 /* Section headings */
@@ -410,5 +446,29 @@ footer {
 
   .highlight-quotes {
     grid-template-columns: 1fr;
+  }
+
+  .eval-table thead {
+    display: none;
+  }
+  .eval-table,
+  .eval-table tbody,
+  .eval-table tr,
+  .eval-table td {
+    display: block;
+    width: 100%;
+  }
+  .eval-table td {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    padding: 7px 2px;
+    font-size: 0.72rem;
+  }
+  .eval-table td:last-child {
+    border-bottom: none;
+  }
+  .eval-table td::before {
+    content: attr(data-label) ": ";
+    font-weight: 700;
+    color: var(--accent-dark);
   }
 }
