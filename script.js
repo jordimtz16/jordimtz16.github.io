@@ -3,18 +3,37 @@ document.addEventListener("DOMContentLoaded", () => {
   const tabLinks = document.querySelectorAll(".tab-link");
   const tabContents = document.querySelectorAll(".tab-content");
 
+  function activateTab(tabName) {
+    const targetContent = document.getElementById(tabName);
+    const targetLink = document.querySelector(`.tab-link[data-tab="${tabName}"]`);
+    if (!targetContent || !targetLink) return false;
+
+    tabLinks.forEach(btn => btn.classList.remove("active"));
+    tabContents.forEach(content => content.classList.remove("active"));
+
+    targetContent.classList.add("active");
+    targetLink.classList.add("active");
+    return true;
+  }
+
   tabLinks.forEach(link => {
     link.addEventListener("click", () => {
       const tabName = link.getAttribute("data-tab");
-
-      // Remove active classes
-      tabLinks.forEach(btn => btn.classList.remove("active"));
-      tabContents.forEach(content => content.classList.remove("active"));
-
-      // Add active to current
-      document.getElementById(tabName).classList.add("active");
-      link.classList.add("active");
+      activateTab(tabName);
+      history.pushState(null, "", "#" + tabName);
     });
+  });
+
+  // Open directly to the tab named in the URL, e.g. yoursite.io/#teaching
+  const initialHash = window.location.hash.replace("#", "");
+  if (initialHash) {
+    activateTab(initialHash);
+  }
+
+  // Support the browser's back/forward buttons
+  window.addEventListener("popstate", () => {
+    const hash = window.location.hash.replace("#", "");
+    activateTab(hash || "about");
   });
 });
 
