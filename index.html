@@ -31,12 +31,10 @@
       <br>
        <br>
        <br>
-       Find my CV here <a href="Jordi_CV_sept26.pdf" target="_blank">CV</a>
-        <br>
-       <br>
          <section class="links">
       <h2>Find Me Online</h2>
       <ul>
+        <li><a href="jordi_CV_sept2026.pdf" target="_blank">CV</a></li>
         <li><a href="https://github.com/jordimtz16">GitHub</a></li>
         <li><a href="https://linkedin.com/in/jordi-martinez-muñoz-696444108/">LinkedIn</a></li>
         <li><a href="mailto:jom001@ucsd.edu">Email Me</a></li>
@@ -46,7 +44,51 @@
   </div>
 
   <div id="research" class="tab-content">
-    <p>Coming...</p>
+    <div class="research-section">
+      <span class="research-tag">Job Market Paper</span>
+      <h2 class="research-title">Beyond the Exploration&ndash;Exploitation Trade-off: The Behavioral Structure of Switching</h2>
+      <p class="research-abstract">Many sequential decision problems&mdash;research and development, investment projects, and contractual relationships&mdash;involve choosing between alternatives whose quality can only be learned through experience. Choosing an alternative of uncertain quality provides information about its underlying quality, but at the cost of less predictable payoffs relative to more familiar alternatives. A common normative benchmark for how agents switch between alternatives is that switching decisions respond to new information about their relative qualities. I take a step back and ask whether new information about alternative quality is necessary for a switching decision. Using an incentivized one-armed bandit experiment&mdash;a repeated choice between a known-quality option and a quality-uncertain one&mdash;I find that it is not. More than half of subjects deviate from the benchmark by switching even when outcomes provide no new information about the relative quality of the alternatives. These subjects choose the uncertain alternative more often and earn 25% less than subjects who follow the normative benchmark. Consistent with this, when these subjects are constrained to use the normative switching strategy, they choose the uncertain alternative less often. I use additional experimental variation to distinguish between types of deviations from the benchmark. One type attenuates or disappears when subjects are encouraged to evaluate decisions over multiple rounds rather than react to individual outcomes, consistent with experience-driven deviations, arising from the experience of play. A second persists even when subjects neither execute the choice strategy themselves nor observe round-by-round outcomes, suggesting valuation-driven deviations, reflecting differences in how subjects evaluate the alternatives themselves.</p>
+
+      <div class="bandit-demo">
+        <p class="bandit-demo-label">Try the actual jar interface from the experiment <span class="bandit-reduced">(a reduced version &mdash; 10 rounds instead of 30)</span></p>
+        <div class="bandit-problem-banner" id="bandit-problem-banner">Problem 1</div>
+        <div class="bandit-round-title">Round <span id="bandit-round">1</span> of 10</div>
+        <div class="bandit-message" id="bandit-message"><i>Click the jar you want to draw from this round.</i></div>
+
+        <div class="jar-container">
+          <div class="jar-wrapper">
+            <button class="cylinder-button" id="bandit-uncertain">
+              <div class="jar-text">Jar A</div>
+              <div class="ball" id="ball-a"></div>
+            </button>
+            <div class="prior-label" id="bandit-prior-a">Reminder: Jar A was randomly chosen from a group with <b>50%</b> good jars. <br><br>A <i>good arm A</i> returns a reward with probability <b>20%</b>. <br><br><i>You don't know yet whether Jar A is good or bad.</i></div>
+          </div>
+          <div class="jar-wrapper">
+            <button class="cylinder-button" id="bandit-known">
+              <div class="jar-text">Jar B</div>
+              <div class="ball" id="ball-b"></div>
+            </button>
+            <div class="prior-label">Jar B is <b><i>Good</i></b>. <br><br>It returns a reward with probability <b>10%</b>.</div>
+          </div>
+        </div>
+
+        <div class="bandit-score-wrap">
+          <div class="bandit-score-box">Your score so far: <strong id="bandit-total">0</strong> points.</div>
+        </div>
+
+        <p class="bandit-caption">Styled after the actual jar interface used in the experiment: one jar's quality is known and fixed, the other's is fixed but unknown, learned only through repeated draws &mdash; and since a bad Jar A can never pay out, drawing a reward from it is definitive proof it's good, exactly as in the real experiment. Each problem runs 10 rounds, then a new one starts with a freshly (and secretly) determined Jar A. The paper asks whether people keep switching toward the uncertain jar even once outcomes stop providing new information about it.</p>
+      </div>
+
+      <p class="research-status">Draft available soon.</p>
+    </div>
+
+    <div class="research-section">
+      <span class="research-tag secondary">Working Paper</span>
+      <h2 class="research-title">Legal Information as an Input to Health Risk Assessments: Evidence from E-Cigarettes in Latin America</h2>
+      <p class="research-authors">with Jos&eacute; Antonio M&aacute;rquez, Fernando Brise&ntilde;o, and V&iacute;ctor P&eacute;rez</p>
+      <p class="research-abstract">When the health risks of an activity are uncertain, individuals may use its legal status as a signal when assessing those risks. We use a randomized survey experiment in Mexico, Argentina, and Chile to test whether information about e-cigarette regulation causes individuals to update their perceptions of health risk.</p>
+      <p class="research-status">Draft available soon.</p>
+    </div>
   </div>
 
 <div id="teaching" class="tab-content">
@@ -57,7 +99,7 @@
       <section class="teaching-section">
         <h2>Experience</h2>
         <p>I have been the main instructor for two courses at UCSD and one course at the University of Costa Rica. Those courses range from low-division to high-division elective classes in economics.</p>
-        <p>I have also been an Instructional Assistant (IA) for +15 quarters, 10 different classes, across three different departments at UCSD. </p>
+        <p>I have also been an Instructional Assistant (IA) for 15 quarters, 10 different classes, across three different departments at UCSD. </p>
 
         <!-- Buttons -->
               <div class="button-container">
@@ -73,8 +115,8 @@
               </ul>
 
               <ul id="ia-list" class="dropdown-list">
-                <li><span class="course-code">Econ 100A</span><span class="course-detail">Intermediate Microeconomics A (winter, 2025, 2026)</span></li>
-                <li><span class="course-code">Econ 100B</span><span class="course-detail">Intermediate Microeconomics A (winter and spring, 2022, spring 2026)</span></li>
+                <li><span class="course-code">Econ 100A</span><span class="course-detail">Intermediate Microeconomics A (winter, 2025)</span></li>
+                <li><span class="course-code">Econ 100B</span><span class="course-detail">Intermediate Microeconomics A (winter and spring, 2022)</span></li>
                 <li><span class="course-code">Econ 142</span><span class="course-detail">Behavioral Economics (spring, 2025)</span></li>
                 <li><span class="course-code">Econ 144</span><span class="course-detail">Economics of Conservation (summer II, 2024)</span></li>
                 <li><span class="course-code">Econ 120B</span><span class="course-detail">Intermediate Econometrics B (summer II, 2022)</span></li>
@@ -242,8 +284,8 @@ great instructor. He is highly knowledgeable and understanding."</p>
           </div>
 
           <p>
-            You can read a summary of the evaluations and the full documents 
-            <a href="teaching_materials/evals_full.pdf" target="_blank">Here</a> (in chronological order, from earliest to oldest).
+            You can read more in the full 
+            <a href="teaching_materials/evals_full.pdf" target="_blank">teaching evaluations</a> (in chronological order, from earliest to oldest).
           </p>
         </div>
       </section>
@@ -256,7 +298,7 @@ great instructor. He is highly knowledgeable and understanding."</p>
 </section>
 
   <footer>
-    <p>© 2026 Jordi Martinez Muñoz</p>
+    <p>© 2025 Jordi Martinez Muñoz</p>
   </footer>
 
   <script src="script.js"></script>

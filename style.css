@@ -58,6 +58,219 @@ main {
   margin-bottom: 2rem;
 }
 
+.research-section {
+  max-width: 900px;
+  margin: 0 auto 24px auto;
+  padding: 26px 34px;
+  background: rgba(var(--accent-rgb), 0.045);
+  border-left: 4px solid var(--accent);
+  border-radius: 0 10px 10px 0;
+}
+.research-tag {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 0.7rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--accent-dark);
+  background: rgba(var(--accent-rgb), 0.14);
+  padding: 4px 10px;
+  border-radius: 5px;
+  margin-bottom: 12px;
+}
+.research-tag.secondary {
+  color: #666;
+  background: rgba(0, 0, 0, 0.06);
+}
+.research-title {
+  font-family: var(--heading-font);
+  color: var(--accent-dark);
+  font-size: 1.18em;
+  line-height: 1.35;
+  margin-bottom: 14px;
+  background: rgba(var(--accent-rgb), 0.1);
+  padding: 14px 18px;
+  border-radius: 6px;
+}
+.research-authors {
+  font-size: 0.85rem;
+  color: #666;
+  font-style: italic;
+  margin-bottom: 16px;
+}
+.research-abstract {
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: #333;
+  text-align: left;
+  margin-bottom: 16px;
+}
+.research-status {
+  font-size: 0.8rem;
+  font-style: italic;
+  color: #777;
+}
+
+.bandit-demo {
+  margin-top: 4px;
+  margin-bottom: 16px;
+  padding: 18px 20px;
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+.bandit-demo-label {
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--accent-dark);
+  margin-bottom: 6px;
+}
+.bandit-reduced {
+  font-weight: 400;
+  font-style: italic;
+  color: #888;
+  font-size: 0.78rem;
+}
+.bandit-problem-banner {
+  text-align: center;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: var(--accent-dark);
+  background: rgba(var(--accent-rgb), 0.1);
+  display: block;
+  width: fit-content;
+  padding: 3px 10px;
+  border-radius: 5px;
+  margin: 0 auto 10px auto;
+}
+.bandit-round-title {
+  text-align: center;
+  font-weight: 700;
+  color: var(--accent-dark);
+  font-size: 0.95rem;
+  margin-bottom: 4px;
+}
+.bandit-instruction {
+  text-align: center;
+  font-size: 0.82rem;
+  color: #555;
+  margin-bottom: 16px;
+}
+.jar-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-top: 40px;
+  margin-bottom: 16px;
+}
+.jar-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.cylinder-button {
+  --r: 24px;
+  width: 108px;
+  height: 144px;
+  position: relative;
+  overflow: visible;
+  background:
+    radial-gradient(50% var(--r) at 50% var(--r), #0003 99.99%, #0000 0),
+    radial-gradient(50% var(--r) at 50% calc(100% - var(--r)), #fff3 99.99%, #0000 0),
+    #a9a9a9;
+  border-radius: 100% / calc(var(--r) * 2);
+  border: 1px solid #000;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+.cylinder-button:hover {
+  background-color: gray;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.18);
+}
+.cylinder-button.pressed {
+  box-shadow: none;
+  transform: translateY(3px);
+}
+.cylinder-button:disabled {
+  cursor: default;
+  opacity: 0.9;
+}
+.jar-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1rem;
+  font-weight: bold;
+  font-family: "Courier New", Courier, monospace;
+  color: white;
+  text-align: center;
+  z-index: 1;
+}
+.ball {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 2px solid #000;
+  display: none;
+  z-index: 2;
+}
+@keyframes ballRise {
+  from {
+    top: 65%;
+    opacity: 0;
+    background: #a9a9a9;
+  }
+  to {
+    top: -30px;
+    opacity: 1;
+  }
+}
+.ball.animate {
+  display: block;
+  animation: ballRise 0.45s ease-out forwards;
+}
+.prior-label {
+  font-size: 0.72rem;
+  color: #555;
+  text-align: center;
+  max-width: 130px;
+  line-height: 1.4;
+}
+.bandit-message {
+  text-align: center;
+  font-size: 0.82rem;
+  color: #444;
+  min-height: 20px;
+  margin-bottom: 14px;
+}
+.bandit-score-wrap {
+  text-align: center;
+  margin-bottom: 12px;
+}
+.bandit-score-box {
+  display: inline-block;
+  border: 2px solid var(--accent-dark);
+  padding: 6px 14px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  color: #333;
+}
+.bandit-caption {
+  font-size: 0.78rem;
+  color: #777;
+  line-height: 1.5;
+  font-style: italic;
+}
+
 .profile-pic {
   width: 120px;
   height: 120px;
@@ -128,29 +341,6 @@ footer {
 
 .tab-content.active {
   display: block;
-}
-
-.cv-embed {
-  width: 100%;
-  max-width: 900px;
-  height: 80vh;
-  min-height: 500px;
-  margin: 20px auto 0 auto;
-}
-.cv-embed iframe {
-  width: 100%;
-  height: 100%;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-}
-.cv-fallback {
-  text-align: center;
-  font-size: 0.85rem;
-  color: #666;
-  margin: 12px 0 20px 0;
-}
-.cv-fallback a {
-  color: var(--accent);
 }
 
 /* Teaching tab layout — book-styled frame with two "pages" */
