@@ -13,6 +13,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     targetContent.classList.add("active");
     targetLink.classList.add("active");
+
+    // The Teaching tab is a full-width two-page spread, so hide the sidebar there
+    const layout = document.querySelector(".page-layout");
+    if (layout) layout.classList.toggle("no-sidebar", tabName === "teaching");
     return true;
   }
 
