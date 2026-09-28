@@ -19,34 +19,6 @@ body {
   background-color: #faf9f6;
 }
 
-.hero {
-  position: relative;
-  height: 300px;
-  text-align: center;
-  color: white;
-}
-
-.bg-image {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-  filter: brightness(50%);
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.overlay {
-  position: relative;
-  padding-top: 100px;
-}
-
-.overlay h1 {
-  font-family: var(--heading-font);
-  letter-spacing: 0.3px;
-  font-size: 2.4rem;
-}
-
 main {
   padding: 2rem;
   max-width: 800px;
@@ -54,8 +26,99 @@ main {
 }
 
 .about {
-  text-align: center;
+  max-width: 700px;
+  padding-top: 18px;
   margin-bottom: 2rem;
+}
+.about-name {
+  font-family: var(--heading-font);
+  color: var(--accent-dark);
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  line-height: 1.15;
+  letter-spacing: 0.2px;
+  margin-bottom: 6px;
+}
+.about-role {
+  font-size: 1.05rem;
+  color: #555;
+  margin-bottom: 18px;
+}
+.about-fields {
+  font-size: 0.95rem;
+  color: #555;
+  margin: -10px 0 18px 0;
+}
+.about-fields span {
+  font-weight: 600;
+  color: #444;
+}
+.about-market {
+  display: inline-block;
+  background: rgba(var(--accent-rgb), 0.1);
+  color: var(--accent-dark);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 6px 14px;
+  border-radius: 6px;
+  margin-bottom: 22px;
+}
+.about-bio {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #333;
+  margin-bottom: 16px;
+}
+.about-jmp {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 26px;
+}
+.about-jmp-label {
+  font-weight: 600;
+  color: #444;
+}
+.about-jmp a {
+  color: var(--accent);
+  cursor: pointer;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(var(--accent-rgb), 0.35);
+}
+.about-jmp a:hover {
+  border-bottom-color: var(--accent);
+}
+.about-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px 26px;
+}
+.cv-button {
+  display: inline-block;
+  padding: 10px 26px;
+  background: var(--accent);
+  color: white;
+  text-decoration: none;
+  border-radius: 999px;
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.14);
+  transition: background-color 0.2s ease;
+}
+.cv-button:hover {
+  background: var(--accent-dark);
+}
+.about-links {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.about-links a {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+.about-links a:hover {
+  text-decoration: underline;
 }
 
 .research-section {
@@ -272,37 +335,6 @@ main {
   font-style: italic;
 }
 
-.profile-pic {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 1rem;
-}
-
-.links ul {
-  list-style: none;
-  text-align: center;
-  padding: 0;
-}
-
-.links li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-.links a {
-  text-decoration: none;
-  color: var(--accent);
-  font-weight: bold;
-}
-
-.links h2 {
-  font-family: var(--heading-font);
-  color: var(--accent-dark);
-  margin-bottom: 10px;
-}
-
 footer {
   text-align: center;
   padding: 1rem;
@@ -316,6 +348,7 @@ footer {
 
 .tab-buttons {
   display: flex;
+  justify-content: flex-end;
   gap: 10px;
   margin-bottom: 1rem;
 }
@@ -602,6 +635,12 @@ footer {
   font-size: 0.9rem;
   color: #444;
 }
+.course-meta {
+  display: block;
+  font-size: 0.78rem;
+  color: #777;
+  margin-top: 2px;
+}
 
 /* Right half */
 .teaching-right h2 {
@@ -676,6 +715,18 @@ footer {
   .headshot {
     width: 155px;
     height: 155px;
+  }
+  .about {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 0;
+  }
+  .about-actions {
+    justify-content: center;
+  }
+  .about-links {
+    justify-content: center;
   }
   .teaching-container {
     flex-direction: column;

@@ -39,6 +39,25 @@ document.addEventListener("DOMContentLoaded", () => {
     const hash = window.location.hash.replace("#", "");
     activateTab(hash || "about");
   });
+
+  // In-page links like the job market paper title: data-go-tab="research"
+  document.querySelectorAll("[data-go-tab]").forEach(el => {
+    const go = () => {
+      const target = el.getAttribute("data-go-tab");
+      if (activateTab(target)) {
+        try { history.pushState(null, "", "#" + target); } catch (e) {}
+        window.scrollTo(0, 0);
+      }
+    };
+    el.addEventListener("click", e => { e.preventDefault(); go(); });
+    el.addEventListener("keydown", e => { if (e.key === "Enter") go(); });
+  });
+
+  // Links inside the page like <a href="#research"> also switch tabs
+  window.addEventListener("hashchange", () => {
+    const hash = window.location.hash.replace("#", "");
+    if (activateTab(hash)) window.scrollTo(0, 0);
+  });
 });
 
 
