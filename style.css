@@ -664,6 +664,11 @@ footer {
 .assessment-subsection p {
   margin: 8px 0;
 }
+/* Links inside sentences are underlined so they read as clickable */
+.assessment-subsection p a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
 
 /* Student quote grid */
 .highlight-quotes {
