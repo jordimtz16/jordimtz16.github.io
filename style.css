@@ -698,6 +698,82 @@ footer {
   margin: 0;
 }
 
+/* Experience: Instructor and IA blocks */
+.exp-block {
+  margin-top: 26px;
+}
+.exp-heading {
+  font-family: var(--heading-font);
+  color: var(--accent);
+  font-size: 1.25em;
+  margin-bottom: 10px;
+}
+.exp-subheading {
+  font-family: var(--heading-font);
+  color: var(--accent-dark);
+  font-size: 0.88rem;
+  margin: 14px 0 6px 0;
+}
+.course-list {
+  list-style: none;
+  padding: 2px 0;
+  margin: 0 0 12px 0;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+}
+/* One flowing line per course: code, name, then dates; wraps under the code */
+.teaching-section .course-list li {
+  margin: 0;
+  padding: 6px 14px;
+  line-height: 1.55;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.055);
+}
+.teaching-section .course-list li:last-child {
+  border-bottom: none;
+}
+.course-list .course-code {
+  display: inline-block;
+  min-width: 0;
+  margin-right: 8px;
+  padding: 1px 7px;
+  font-size: 0.72rem;
+}
+.course-list .course-detail {
+  font-size: 0.86rem;
+}
+.course-list .course-meta {
+  display: inline;
+  margin: 0;
+}
+.course-list .course-meta::before {
+  content: " \00B7  ";
+}
+.table-note {
+  font-size: 0.68rem;
+  color: #777;
+  font-style: italic;
+  line-height: 1.4;
+  margin: 2px 0 8px 0;
+}
+.ia-group {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px dashed rgba(var(--accent-rgb), 0.3);
+}
+.ia-group-title {
+  font-family: var(--heading-font);
+  color: var(--accent-dark);
+  font-size: 1.02rem;
+  margin-bottom: 10px;
+}
+.evals-link {
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-top: 6px;
+}
+
 /* -----------------------
    Responsive adjustments
 ------------------------ */
@@ -772,6 +848,13 @@ footer {
   }
   .eval-table td:last-child {
     border-bottom: none;
+  }
+  .eval-table tr {
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    padding: 2px 10px;
+    margin-bottom: 8px;
+    background: #fff;
   }
   .eval-table td::before {
     content: attr(data-label) ": ";
