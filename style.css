@@ -755,6 +755,13 @@ footer {
 .course-list .course-meta::before {
   content: " \00B7  ";
 }
+.course-highlight {
+  display: block;
+  margin-top: 3px;
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--accent);
+}
 .table-note {
   font-size: 0.68rem;
   color: #777;
