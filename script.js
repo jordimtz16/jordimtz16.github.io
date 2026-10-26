@@ -193,3 +193,26 @@ document.addEventListener("click", function () {
 
   resetSession();
 })();
+
+
+// Light / dark mode toggle (default is dark; the choice is remembered)
+(function () {
+  const btn = document.getElementById("theme-toggle");
+  if (!btn) return;
+  const root = document.documentElement;
+  function label() {
+    const dark = root.getAttribute("data-theme") === "dark";
+    const text = dark ? "Switch to light mode" : "Switch to dark mode";
+    btn.setAttribute("aria-label", text);
+    btn.setAttribute("title", text);
+  }
+  btn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const dark = root.getAttribute("data-theme") === "dark";
+    if (dark) root.removeAttribute("data-theme");
+    else root.setAttribute("data-theme", "dark");
+    try { localStorage.setItem("theme", dark ? "light" : "dark"); } catch (err) {}
+    label();
+  });
+  label();
+})();
