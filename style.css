@@ -549,6 +549,24 @@ footer {
 .eval-list strong {
   color: var(--accent);
 }
+.eval-lead {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin: 6px 0 8px 0;
+}
+.eval-lead-number {
+  font-family: var(--heading-font);
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--accent);
+}
+.eval-lead-label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-2);
+}
 
 /* Section headings */
 .teaching-section {
